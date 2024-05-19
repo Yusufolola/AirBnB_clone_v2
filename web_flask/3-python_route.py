@@ -31,7 +31,7 @@ def c_params(text):
 def python(text="is cool"):
     """default"""
     no_underscore = text.replace("_", " ")
-    return f"python {no_underscore}"
+    return f"Python {no_underscore}"
 
 
 if __name__ == "__main__":
