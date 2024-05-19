@@ -1,0 +1,45 @@
+#!/usr/bin/python3
+"""hello routh"""
+
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route("/", strict_slashes=False)
+def hello():
+    """displays hello hbnb"""
+    return "Hello HBNB!"
+
+
+@app.route("/hbnb", strict_slashes=False)
+def hbnb():
+    """display  “HBNB”"""
+    return "HBNB"
+
+
+@app.route("/c/<text>", strict_slashes=False)
+def c_params(text):
+    """display 'C' followed by the value of the text
+    variable (replace underscore _ symbols with a space re"""
+    no_underscore = text.replace("_", " ")
+    return f"C {no_underscore}"
+
+
+@app.route("/python", strict_slashes=False)
+@app.route("/python/<text>", strict_slashes=False)
+def python(text="is cool"):
+    """default"""
+    no_underscore = text.replace("_", " ")
+    return f"Python {no_underscore}"
+
+
+@app.route("/number/<n>", strict_slashes=False)
+def number(n):
+    """return n is a number"""
+    if n is instance int:
+        return f"{n} is a number"
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", debug=True)
