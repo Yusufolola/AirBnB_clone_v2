@@ -29,6 +29,7 @@ def c_params(text):
 @app.route("/python", strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def python(text="is cool"):
+    """default"""
     no_underscore = text.replace("_", " ")
     return f"python {no_underscore}"
 
