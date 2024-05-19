@@ -34,11 +34,10 @@ def python(text="is cool"):
     return f"Python {no_underscore}"
 
 
-@app.route("/number/<n>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
     """return n is a number"""
-    if n is instance int:
-        return f"{n} is a number"
+    return f"{n} is a number"
 
 
 if __name__ == "__main__":
